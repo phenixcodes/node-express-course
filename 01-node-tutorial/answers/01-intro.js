@@ -1,3 +1,5 @@
+
+
 const max = 20;
 
 function getRandomInt(max) {
@@ -7,7 +9,7 @@ function getRandomInt(max) {
 var amount = getRandomInt(max);
 
 if (amount < 10) {
-  console.log( amount + ' is a small number.');
+  console.log(amount + ' is a small number.');
 } else {
   console.log(amount + ' is a large number.');
 }
