@@ -21,10 +21,10 @@ const getBody = (req, callback) => {
 };
 
 // here, you could declare one or more variables to store what comes back from the form.
-let item = "Enter something a color below.";
+let item = "Enter a color below.";
 
 // When the user enters a string into the form that is color, the background color will also change. 
-// ${item} holds the string. the string is then passed to the body and the backgroun-color property. 
+// ${item} holds the string. The string is then passed to the body and the background-color property. 
 const form = () => {
   return `
   <body style="background-color:${item}; color:black">
