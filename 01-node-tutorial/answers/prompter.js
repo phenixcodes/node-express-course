@@ -27,7 +27,7 @@ let item = "Enter a color below.";
 // ${item} holds the string. The string is then passed to the body and the background-color property. 
 const form = () => {
   return `
-  <body style="background-color:${item}; color:black">
+  <body style="background-color:${item};">
   <p>${item}</p>
   <form method="POST">
   <input name="item"></input>
@@ -59,6 +59,10 @@ const server = http.createServer((req, res) => {
     res.end(form());
   }
 });
+
+server.on("request", (req) => {  
+  console.log("event received: ", req.method, req.url);  
+});  
 
 server.listen(3000);
 console.log("The server is listening on port 3000.");

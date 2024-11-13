@@ -1,4 +1,5 @@
-
+/** This program calls a function that returns a random integer (max of 20)
+ *  and prints out the value compared to the number 10 */
 
 const max = 20;
 
