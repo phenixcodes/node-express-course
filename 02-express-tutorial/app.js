@@ -13,6 +13,7 @@ const logger = (req,res, next) => {
 }
 //Loads html and css files to homepage
 app.use(express.static('./methods-public'))
+
 //create middleware for parsing json
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
