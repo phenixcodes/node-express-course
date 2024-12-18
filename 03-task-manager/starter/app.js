@@ -4,18 +4,21 @@ const app = express();
 const {getAllTasks} = require('./controllers/tasks.js')
 const connectDB = require('./db/connect.js')
 require('dotenv').config()
+const notFound = require('./middleware/not-found.js');
+const asyncWrapper = require('./middleware/async.js')
+const errorHandlerMiddleware = require('./middleware/error-handler.js')
 
 //middleware 
+app.use(express.static('./public'))
 app.use(express.json())
 
-//routes
-app.get('/hello', (req,res) => {
-    res.send("Task Manager App")
-})
+app.use(notFound)
+app.use(errorHandlerMiddleware)
 
+//routes
 app.use('/api/v1/tasks', tasks)
 
-const port = 3000
+const port = process.env.PORT || 3000
 
 const start = async () => {
     try{ 

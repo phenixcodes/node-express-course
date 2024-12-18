@@ -2,8 +2,18 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const TaskSchema = new Schema({
-    name:String, 
-    completed:Boolean
+    name:{ 
+        type: String, 
+        required:[
+            true, "must provide a name"
+        ],
+        trim: true, 
+        maxlength:[20, `name can not be more than 20 characters`],
+    },
+    completed:{
+        type: Boolean, 
+        default: false,
+    },
 })
 
 module.exports = mongoose.model('Task', TaskSchema)
