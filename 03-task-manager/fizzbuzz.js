@@ -1,22 +1,22 @@
-let counter = 1;
+
 let answer = [];
 const fizzBuzz = (num) => {
     for(let i = 1; i < num+1; i++) {
         if(i%3 == 0 && i%5 == 0){
             answer.push("FizzBuzz");
-            counter++;
+            i++;
         }
         else if(i%5 == 0) {
             answer.push("Buzz");
-            counter++;
+            i++;
         }
         else if(i%3 == 0) {
             answer.push("Fizz");
-            counter++;
+            i++;
         }
         else{
-            answer.push(counter.toString());
-            counter++;
+            answer.push(i.toString());
+            i++;
         }
     }
     return answer
