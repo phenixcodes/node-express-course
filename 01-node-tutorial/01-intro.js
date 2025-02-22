@@ -1,9 +1,15 @@
-const amount = 9
+const max = 20;
 
-if (amount < 10) {
-  console.log('small number')
-} else {
-  console.log('large number')
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
 
-console.log(`hey it's my first node app!!!`)
+var amount = getRandomInt(max);
+
+if (amount < 10) {
+  console.log( amount + ' is a small number.');
+} else {
+  console.log(amount + ' is a large number.');
+}
+
+console.log(`hey it's my first node app!!! Whoohoo!`)
